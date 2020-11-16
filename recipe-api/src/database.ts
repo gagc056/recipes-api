@@ -9,7 +9,7 @@ export async function connect() {
 		port: 3306,
 		username: process.env.DB_USERNAME || 'localhost',
 		password: process.env.DB_PASSWORD || '9098',
-		database: process.env.DB_NAME || 'puzzle',
+		database: process.env.DB_NAME || 'root',
 		entities: [
 			path.join(__dirname, '../entity/**/**.ts')
 		],
