@@ -19,3 +19,6 @@ npm install npm@latest -g
 * Bcrypt
 * Mysql
 * Apollo Server
+
+### Mentor
+Gabriel Mc Gean
