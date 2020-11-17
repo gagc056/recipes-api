@@ -23,7 +23,6 @@ createConnection().then(async connection => {
     });
 
     apolloserver.applyMiddleware({ app, path: "/graphql" })
-   
     app.listen(4000);
 
 });
