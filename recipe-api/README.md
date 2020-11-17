@@ -20,5 +20,11 @@ npm install npm@latest -g
 * Mysql
 * Apollo Server
 
+### Contact
+@gagc056 - gagc056@gmail.com
+
 ### Mentor
 Gabriel Mc Gean
+
+Show your support Give a ⭐️ if you like this project!
+
