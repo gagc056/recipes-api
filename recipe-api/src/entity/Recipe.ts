@@ -8,7 +8,7 @@ import { Category } from './Category';
 
 @ObjectType()
 @Entity()
-@Unique(['username']) 
+@Unique(['username'])
 export  class Recipe extends BaseEntity {
   [x: string]: any;
   @PrimaryGeneratedColumn()
@@ -30,7 +30,7 @@ export  class Recipe extends BaseEntity {
   @IsNotEmpty()
   ingredients!: string;
 
-  @IsNotEmpty() 
+  @IsNotEmpty()
   @CreateDateColumn({ type: 'timestamp' })
   createdAt!: string;
 

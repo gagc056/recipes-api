@@ -31,7 +31,7 @@
       "mysql": "^2.14.1",
       "reflect-metadata": "^0.1.10",
       "type-graphql": "^1.0.0",
-      "typeorm": "0.2.26"
+      "typeorm": "^0.2.26"
    },
    "scripts": {
       "tsc": "tsc",

@@ -2,6 +2,8 @@
    "compilerOptions": {
       "lib": [
          "es5",
+         "esnext.asynciterable",
+
          "es6"
       ],
       "target": "es6",

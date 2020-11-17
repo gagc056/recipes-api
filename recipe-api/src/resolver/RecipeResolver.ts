@@ -37,7 +37,6 @@ class UpdateRecipeInput {
   @Field(() => String, {nullable: true})
   ingredients?: string
 
-  
 }
 
 @Resolver()
@@ -48,7 +47,7 @@ export class RecipeResolver {
 	async createRecipe(
     @Arg('params', () => CreateRecipeInput) params: CreateRecipeInput,
     @Ctx() context: any
-	) {
+	): Promise<Recipe[]> {
 
 		const {
 			name,
@@ -66,21 +65,21 @@ export class RecipeResolver {
 		const userRepository = getRepository(User)
 		const user = await userRepository.findOne(userId)
 
-		if(user && category) {
+		if (user && category) {
+			//@ts-ignore
 			const recipe = recipeRepository.create({
-				description: String,
-				name: String,
-        ingredients: String,
-        user: User,
-        category:Category
+				description,
+				name,
+        ingredients,
+        user,
+        category
       })
-			return await recipeRepository.save(recipe)
-			
+			return await recipeRepository.save(recipe);
+
 		}
-		throw new Error('Error')
-    
+		throw new Error('Error');
 	}
-  
+
   @Authorized()
   @Mutation(() => Recipe)
   async updateRecipe(
@@ -107,8 +106,6 @@ export class RecipeResolver {
   		}
   	})
   	if(recipe) {
-      
-
   		if(name) recipe.name = name
   		if(description)  recipe.description = description
   		if(ingredients) recipe.ingredients = ingredients
@@ -117,9 +114,7 @@ export class RecipeResolver {
   		return recipe
   	} else {
   		throw new Error('You dont have this recipe')
-      
   	}
-  
   }
 
   @Authorized()
@@ -134,7 +129,6 @@ export class RecipeResolver {
   	if(recipe) {
   		await recipeRepository.remove(recipe)
   	}
-    
 
   	return 'Your recipe was erased'
   }
@@ -185,7 +179,6 @@ export class RecipeResolver {
   		where: {
   			id: context.user.id
   		}
-    
   	})
 
 

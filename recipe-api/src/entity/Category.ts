@@ -11,10 +11,11 @@ import { Recipe } from './Recipe';
 
 @Unique(['name'])
 export  class Category extends BaseEntity {
+  static update: any;
+  static find: any;
   @PrimaryGeneratedColumn()
   id!: number;
 
-  
 
   @Column()
   @MinLength(12)
@@ -28,4 +29,5 @@ export  class Category extends BaseEntity {
   @Field(() => String)
   @CreateDateColumn({ type: 'timestamp' })
   createdAt!: string;
+  static create: any;
 }

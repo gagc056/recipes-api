@@ -73,12 +73,12 @@ export class UserResolver {
       email: user.email,
       id: user.id
     }, '1 day')
-  
+
     return ({
       token
     })
   }
-  
+
   @Mutation(() => TokenType)
   async login(
     @Arg('params', () => LoginInput) params: LoginInput
@@ -104,12 +104,11 @@ export class UserResolver {
         })
       } else {
         throw new Error(' Incorrect')
-        
+
       }
     } else {
       throw new Error('Your email is not correct')
-      
-    } 
-  	
+    }
+
   }
 }
